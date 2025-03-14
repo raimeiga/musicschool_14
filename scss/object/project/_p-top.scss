@@ -261,88 +261,101 @@
 
 .p-top__voice {
  padding-block: 6.4rem 6rem;
+ padding-inline: 7rem;
+ margin: auto;
  @include sp {
    padding-block: 4.6rem 5rem;
  }
 }
 
-
 .p-top-voice__inner {
- max-width: 94rem;
+ max-width: 97.5rem;
  width: 100%;
- padding-inline: 3rem;
+ padding-inline: 1.25rem;
  margin: 0 auto;
 }
 
 .p-top-voice__lists {
- display: flex;
- column-gap: 3.5rem; 
- justify-content: space-between;
- padding-top: 3.6rem;
+ width: 100%; 
+ // margin: 0 auto;
  position: relative;
+ padding-top: 3.6rem;
 }
 
 .p-top-voice__list {
- // margin-inline: 1.7rem;   
+ // margin-inline: 1.75rem;
+ margin: 0 1.75rem;
 }
-
-.slick-list {
- margin: 0 -17px;
-}
-.slick-slide {
- margin: 0 17px;
-}
-
-.slick-prev, .slick-next {
- display: block;
-  background: transparent; /* 背景を透明に */
-  border: none; /* ボーダーを消す */
-  outline: none; /* アウトラインを消す */
-  cursor: pointer; /* カーソルをポインターに */
-  position: absolute; /* 矢印を絶対位置に */
-  top: 47%; /* 縦位置を中央に */
-  transform: translateY(-50%); /* 中央に合わせる */
-  z-index: 10; //これないとprev矢印が見えない。
-  @include sp {
-    top: 48%;
-    transform: translateY(-50%); /* 中央に合わせる */
-    opacity: 1;
-    z-index: 10; //これないとprev矢印が見えない。
-  }
-}
-
-.slick-prev {
-  left: -4rem; /* 左矢印の位置 */
-  @include sp {
-    left: 0;
-  }
-}
-
-.slick-next {
-  right: -4rem; /* 右矢印の位置 */
-  @include sp {
-    right: 0;
-  }
-}
-
 
 .p-top-voice__img { 
- background-color: aqua;
+ width: 100%;
 }
 
 .p-top-voice__name {
+ background-color: aqua;
  width: 100%;
  text-align: center;
  padding-block: 1.7rem 1rem;
  color: #fff;
- font-size: 2.2rem;
+ font-size: vw(22,1080);
  line-height: calc(33 / 22);
+ letter-spacing: -0.01em; 
+ //↑ これがないと、画面を943pxで「丸山さん」の名前のところが
+ //改行されてしまう。vw関数使ってるんだけど、何故こうなる？
 }
 
 .p-top-voice__text {
  width: 100%;
  color: #fff;
- font-size: 1.8rem;
+ font-size: vw(18,1080);
  line-height: calc(30 / 18);
  font-weight: 500;
 }
+
+.slick-arrow {
+ z-index: 2 !important;
+ width: 2.8rem !important;
+ height: 4rem !important;
+ position: relative;
+}
+.slick-arrow::before {
+ content: ''!important;
+ width: 2.8rem !important;
+ height: 4rem !important;
+ position: absolute;
+ top: 0; 
+}
+
+.slick-prev {
+ position: absolute;
+ top: 43%;
+ left: -2.5rem; /* 左矢印の位置 */  
+ transition: 0.5s;
+ @include sp {
+   left: 0;
+ }
+}
+.slick-prev::before {
+ background-image: url(../images/arrow-prev.svg) ;
+ background-size: contain !important;
+ background-repeat: no-repeat;
+}
+
+.slick-next {
+ position: absolute;
+ top: 43%;
+ right: -2.5rem; /* 右矢印の位置 */ 
+ transition: 0.5s;
+ @include sp {
+   right: 0;
+ }
+}
+.slick-next::before {
+ background-image: url(../images/arrow-next.svg) ;
+ background-size: contain !important;
+ background-repeat: no-repeat;
+}
+
+
+
+

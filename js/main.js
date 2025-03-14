@@ -12,13 +12,17 @@ $(function (){
 
 //スライダー
    $(".js-slider").slick({
-    autoplay: true,  //自動再生
+    autoplay: false,  //自動再生
     autoplaySpeed: 1000,    
     // arrows: true,
     slidesToShow: 3, // 3枚ずつ表示
     slidesToScroll: 1, // 1枚ずつスクロール
+    // 「Previous」「Next」の文字を非表示にするために↓を書いている
     prevArrow: '<button type="button" class="slick-prev"><img src="images/arrow-prev.svg" alt="Previous"></button>',  
     nextArrow: '<button type="button" class="slick-next"><img src="images/arrow-next.svg" alt="Next"></button>',
+    // 「Previous」「Next」の文字を表記したければ↓のようにすればよい
+    //prevArrow: '<button type="button" class="slick-prev"><img src="images/arrow-prev.svg" alt="Previous">Previous</button>',  
+    //nextArrow: '<button type="button" class="slick-next"><img src="images/arrow-next.svg" alt="Next">Next</button>',
 
 
   });
