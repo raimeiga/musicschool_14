@@ -23,7 +23,14 @@ $(function (){
     // 「Previous」「Next」の文字を表記したければ↓のようにすればよい
     //prevArrow: '<button type="button" class="slick-prev"><img src="images/arrow-prev.svg" alt="Previous">Previous</button>',  
     //nextArrow: '<button type="button" class="slick-next"><img src="images/arrow-next.svg" alt="Next">Next</button>',
-
+    responsive:[
+     {
+         breakpoint: 768,
+         settings:{
+             slidesToShow:1
+         }
+     }
+ ]
 
   });
 

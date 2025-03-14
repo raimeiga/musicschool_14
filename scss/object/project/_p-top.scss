@@ -211,7 +211,7 @@
 .p-top__reason {
  padding-block: 6.4rem 2rem;
  @include sp {
-   padding-block: 4.9rem 3.9rem;
+   padding-block: 4.9rem 0;
  }
 }
 
@@ -220,7 +220,7 @@
  margin-block: 2.8rem 5rem;
  @include sp {
   flex-direction: column;
-  margin-block: 3.6rem 3.9rem;
+  margin-block: 3.6rem 3.8rem;
  }
 }
 
@@ -265,6 +265,7 @@
  margin: auto;
  @include sp {
    padding-block: 4.6rem 5rem;
+   padding-inline: 2rem;
  }
 }
 
@@ -273,6 +274,9 @@
  width: 100%;
  padding-inline: 1.25rem;
  margin: 0 auto;
+ @include sp {
+  padding-inline: 0;
+ }
 }
 
 .p-top-voice__lists {
@@ -285,6 +289,9 @@
 .p-top-voice__list {
  // margin-inline: 1.75rem;
  margin: 0 1.75rem;
+ @include sp {
+  margin: 0;
+ }
 }
 
 .p-top-voice__img { 
@@ -292,24 +299,32 @@
 }
 
 .p-top-voice__name {
- background-color: aqua;
  width: 100%;
  text-align: center;
  padding-block: 1.7rem 1rem;
  color: #fff;
- font-size: vw(22,1080);
- line-height: calc(33 / 22);
- letter-spacing: -0.01em; 
- //↑ これがないと、画面を943pxで「丸山さん」の名前のところが
- //改行されてしまう。vw関数使ってるんだけど、何故こうなる？
+ font-size: hvw1080(22);
+  //↑hvw1080は、_variable.scssに書いてる関数
+  //画面幅1080px以上ではfont-size:22px以上にならないって意味
+ @include sp {
+   padding-block: 2.9rem 1rem;
+   font-size: 2.2rem;
+   line-height: calc(33 / 22);
+ }
 }
 
 .p-top-voice__text {
  width: 100%;
  color: #fff;
- font-size: vw(18,1080);
+ font-size: hvw1080(18);
+ //↑hvw1080は、_variable.scssに書いてる関数
+ //画面幅1080px以上ではfont-size:18px以上にならないって意味
  line-height: calc(30 / 18);
  font-weight: 500;
+ @include sp {
+  font-size: 1.8rem;
+  line-height: calc(30 / 18);
+}
 }
 
 .slick-arrow {
