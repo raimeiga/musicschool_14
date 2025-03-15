@@ -315,6 +315,8 @@
 
 .p-top-voice__text {
  width: 100%;
+ padding-inline: 0.1rem;
+ text-align: left;
  color: #fff;
  font-size: hvw1080(18);
  //↑hvw1080は、_variable.scssに書いてる関数
